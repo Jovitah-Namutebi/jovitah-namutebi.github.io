@@ -1,0 +1,176 @@
+/* ============================================================
+   Colours. Change these to change the look of the whole site.
+   ============================================================ */
+:root {
+  --background: #ffffff;
+  --text: #1f2328;
+  --muted: #5b6370;
+  --accent: #1d4e89;      /* links and highlights */
+  --line: #e4e6ea;
+}
+
+/* Dark mode: used automatically when the visitor's computer is in dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #15171a;
+    --text: #e8eaed;
+    --muted: #a0a7b1;
+    --accent: #8ab4f8;
+    --line: #2c3036;
+  }
+}
+
+/* ============================================================
+   Page basics
+   ============================================================ */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1, h2, .title {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-weight: 600;
+}
+
+h1 { font-size: 2.1rem; margin: 0 0 4px; line-height: 1.2; }
+
+h2 {
+  font-size: 1.5rem;
+  margin: 0 0 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+section { padding: 48px 0 8px; scroll-margin-top: 60px; }
+
+/* ============================================================
+   Top menu
+   ============================================================ */
+.menu {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 14px 16px;
+  background: var(--background);
+  border-bottom: 1px solid var(--line);
+}
+
+.menu .name-link { color: var(--text); font-weight: 600; }
+.menu-links { display: flex; gap: 20px; }
+.menu-links a { color: var(--muted); font-weight: 500; }
+.menu-links a:hover { color: var(--accent); text-decoration: none; }
+
+/* ============================================================
+   About section
+   ============================================================ */
+.about {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.photo {
+  width: 180px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: var(--line);
+}
+
+.role { color: var(--muted); margin: 0 0 18px; }
+.fields { font-size: 0.95rem; }
+.contact { font-weight: 500; }
+.dot { color: var(--muted); margin: 0 8px; }
+
+/* On phones: photo above the text */
+@media (max-width: 640px) {
+  .about { grid-template-columns: 1fr; gap: 20px; }
+  .photo { width: 140px; height: 170px; }
+  .menu-links { gap: 14px; }
+}
+
+/* ============================================================
+   Research section
+   ============================================================ */
+.group {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  font-weight: 600;
+  margin: 28px 0 12px;
+}
+
+.paper { margin-bottom: 22px; }
+.paper .title { font-size: 1.12rem; margin: 0 0 4px; line-height: 1.4; }
+.paper .authors { margin: 0 0 4px; color: var(--muted); font-size: 0.95rem; }
+
+details summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+details p {
+  margin: 8px 0 0;
+  padding-left: 14px;
+  border-left: 2px solid var(--line);
+  color: var(--muted);
+  font-size: 0.97rem;
+}
+
+/* ============================================================
+   Teaching section
+   ============================================================ */
+.teach {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.teach p { margin: 0; }
+.teach .title { font-size: 1.05rem; }
+.teach .when { color: var(--muted); white-space: nowrap; font-size: 0.95rem; }
+
+@media (max-width: 640px) {
+  .teach { flex-direction: column; gap: 2px; }
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+footer {
+  max-width: 760px;
+  margin: 48px auto 0;
+  padding: 20px 16px 40px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
